@@ -1,0 +1,301 @@
+{
+  "style": {
+    "font-family": "Nunito Sans",
+    "background-color": "#F2F2F2",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#4C8EDA",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 75,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#ffffff",
+    "caption-font-size": 20,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "bare",
+    "label-color": "#ffffff",
+    "label-background-color": "#848484",
+    "label-border-color": "#848484",
+    "label-border-width": 3,
+    "label-font-size": 20,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "above",
+    "detail-orientation": "parallel",
+    "arrow-width": 3,
+    "arrow-color": "#848484",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#848484",
+    "type-background-color": "#F2F2F2",
+    "type-border-color": "#848484",
+    "type-border-width": 0,
+    "type-font-size": 21,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#848484",
+    "property-font-size": 20,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "position": {
+        "x": 55.8655066908708,
+        "y": 309.00873938081077
+      },
+      "caption": "Español",
+      "labels": [
+        "Language"
+      ],
+      "properties": {
+        "name": "String",
+        "url": "String",
+        "abbreviation": "String",
+        "urlFlag": "String",
+        "status": "Boolean"
+      },
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 291.5080624849172,
+        "y": -3.999999999999659
+      },
+      "caption": "Salud",
+      "labels": [
+        "Category"
+      ],
+      "properties": {
+        "name": "String",
+        "url": "String",
+        "description": "String",
+        "urlIcon": "String"
+      },
+      "style": {}
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 726.0780354481647,
+        "y": -4
+      },
+      "caption": "Vacunación 2022",
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "String",
+        "url": "String",
+        "urlIcon": "String"
+      },
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 559.3299813529263,
+        "y": 512.9920099853873
+      },
+      "caption": "Se cumplio al 90% la Vacunación",
+      "labels": [
+        "Post"
+      ],
+      "properties": {
+        "content": "String",
+        "title": "String",
+        "description": "String",
+        "summary": "String",
+        "leaps": "String",
+        "updateMoment": "Date",
+        "publishDate": "Date",
+        "place": "String"
+      },
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 1263.3802632145578,
+        "y": 436.23911693452516
+      },
+      "caption": "Frank",
+      "labels": [
+        "User",
+        "Editor",
+        "Author"
+      ],
+      "properties": {
+        "name": "String",
+        "userName": "String",
+        "url": "String",
+        "lastname": "String",
+        "userTwitter": "String",
+        "email": "String"
+      },
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 994.3030152290171,
+        "y": 778.560312123603
+      },
+      "caption": "vacunacion.jpg",
+      "labels": [
+        "Media"
+      ],
+      "properties": {
+        "uploadDate": "Date",
+        "type": "String",
+        "url": "String",
+        "title": "String",
+        "summary": "String"
+      },
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": 1070.92399536012,
+        "y": 102.89508277555433
+      },
+      "caption": "buen post",
+      "labels": [
+        "Comment"
+      ],
+      "properties": {
+        "dateCreate": "Date",
+        "content": "String",
+        "approved": "Boolean"
+      },
+      "style": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "type": "IN_LANGUAGE",
+      "style": {},
+      "properties": {},
+      "fromId": "n2",
+      "toId": "n1"
+    },
+    {
+      "id": "n1",
+      "type": "IN_LANGUAGE",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n1"
+    },
+    {
+      "id": "n2",
+      "type": "IN_LANGUAGE",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n1"
+    },
+    {
+      "id": "n3",
+      "type": "IN_CATEGORY",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n2"
+    },
+    {
+      "id": "n4",
+      "type": "HAS_TAG",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n3"
+    },
+    {
+      "id": "n5",
+      "fromId": "n5",
+      "toId": "n4",
+      "type": "CREATE",
+      "properties": {
+        "created": "Date"
+      },
+      "style": {}
+    },
+    {
+      "id": "n6",
+      "fromId": "n5",
+      "toId": "n4",
+      "type": "HAS_EDITED",
+      "properties": {
+        "updateMoment": "Date"
+      },
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "fromId": "n4",
+      "toId": "n6",
+      "type": "CONTAINS",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n8",
+      "fromId": "n5",
+      "toId": "n6",
+      "type": "UPLOAD",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n9",
+      "fromId": "n7",
+      "toId": "n4",
+      "type": "BELONGS_TO",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n10",
+      "fromId": "n5",
+      "toId": "n7",
+      "type": "WROTE",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n11",
+      "fromId": "n7",
+      "toId": "n7",
+      "type": "COMMENT_OF",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n12",
+      "type": "SUB_CATEGORY_OF",
+      "style": {},
+      "properties": {},
+      "fromId": "n2",
+      "toId": "n2"
+    }
+  ]
+}
