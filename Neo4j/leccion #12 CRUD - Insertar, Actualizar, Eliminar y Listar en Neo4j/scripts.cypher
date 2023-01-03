@@ -128,3 +128,32 @@ merge(postYoutube)-[:IN_LANGUAGE]->(len)
 
 //Autor::
 merge(aut1)-[:CREATE {created:'2023/01/02'}]->(postYoutube)
+
+
+//Explicacion del comando Merge
+merge (mIA:Media {type: "imagen",
+        url: "tsunami-con-IA.jpg",
+        title: "Se predice tsunami con IA.jpg",
+        summary: "El Laboratorio de Ciencias de la Predicción RIKEN ha publicado una nota de prensa en la que indican que han utilizado el aprendizaje automático para predecir con precisión los impactos de los tsunamis en menos de un segundo"})
+on create set mIA.uploadDate = datetime()
+on match set mIA.uploadEdit = datetime()
+
+//Creando las relaciones de nuestra Media IA en el Grafo
+match(a:Author {name:"Juan"})
+match(m:Media {url:"tsunami-con-IA.jpg"})
+match(p:Post)
+where p.url = "se-puede-predecir-un-tsunami-en-pocos-segundos-gracias-a-un-nuevo-modelo-de-ia"
+merge(a)-[:UPLOAD]->(m)
+merge(p)-[:CONTAINS]->(m)
+return *
+
+//Creando las relaciones de nuestra Media Youtube en el Grafo
+merge (mIA:Media {type: "imagen",
+        url: "youtube-videos-subtitulos.jpg",
+        title: "nueva herramienta para youtube",
+        summary: "Esta información está en muchos idiomas diferentes, por eso es importante usar el sistema de subtítulos con frecuencia, aunque a veces se necesitan herramientas adicionales que ayuden a transcribir lo que escuchamos, ofreciendo también la posibilidad de editar el texto ofrecido y traducirlo cuando sea necesario."})
+match(a:Author {name:"Juan"})
+match(p:Post {"transcribe-traduce-y-edita-videos-de-youtube"})
+merge(a)-[:UPLOAD]->(mIA)
+merge(p)-[:CONTAINS]->(mIA)
+return *
